@@ -12,7 +12,7 @@ With SLVI/Data you can develop large entity models quickly with very little code
 
 SLVI/Data is an abstraction over the Store, Effects, and Entity that radically reduces the amount of code you'll write. As with any abstraction, while you gain simplicity, you lose the explicitness of direct interaction with the supporting NgRx libraries.
 
-This library was generated with [Nx](https://nx.dev).
+This library was made with Love, generated with [Nx](https://nx.dev).
 
 ## Installation
 
