@@ -1,0 +1,39 @@
+{
+    "projectType": "library",
+    "root": "libs/data",
+    "sourceRoot": "libs/data/src",
+    "prefix": "slvi",
+    "targets": {
+        "build": {
+            "executor": "@nrwl/angular:package",
+            "outputs": ["dist/libs/data"],
+            "options": {
+                "project": "libs/data/ng-package.json"
+            },
+            "configurations": {
+                "production": {
+                    "tsConfig": "libs/data/tsconfig.lib.prod.json"
+                },
+                "development": {
+                    "tsConfig": "libs/data/tsconfig.lib.json"
+                }
+            },
+            "defaultConfiguration": "production"
+        },
+        "test": {
+            "executor": "@nrwl/jest:jest",
+            "outputs": ["coverage/libs/data"],
+            "options": {
+                "jestConfig": "libs/data/jest.config.js",
+                "passWithNoTests": true
+            }
+        },
+        "lint": {
+            "executor": "@nrwl/linter:eslint",
+            "options": {
+                "lintFilePatterns": ["libs/data/src/**/*.ts"]
+            }
+        }
+    },
+    "tags": ["angular-lib"]
+}

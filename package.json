@@ -1,0 +1,33 @@
+{
+    "name": "@slvi/data",
+    "displayName": "data",
+    "version": "1.0.0",
+    "author": "Amr Samra <amr.samra@slvi.com> (http://slvi.net)",
+    "description": "SLVI/Data is an abstraction over the Store, Effects, and Entity that radically reduces the amount of code you'll write. As with any abstraction, while you gain simplicity, you lose the explicitness of direct interaction with the supporting NgRx libraries.",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/AmrSamra/data"
+    },
+    "homepage": "https://github.com/AmrSamra/data#readme",
+    "bugs": {
+        "url": "https://github.com/AmrSamra/data/issues"
+    },
+    "keywords": [
+        "ngrx",
+        "angular",
+        "rxjs"
+    ],
+    "peerDependencies": {
+        "@angular/common": "~12.0.0",
+        "@angular/core": "~12.0.0",
+        "@ngrx/store": "~12.2.0",
+        "@ngrx/effects": "~12.2.0",
+        "@ngrx/entity": "~12.2.0",
+        "rxjs": "~6.5.3 || ~7.0.0",
+        "uuid": "^8.3.2"
+    },
+    "dependencies": {
+        "tslib": "^2.2.0"
+    },
+    "license": "MIT"
+}

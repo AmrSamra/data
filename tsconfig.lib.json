@@ -1,0 +1,15 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+        "outDir": "../../dist/out-tsc",
+        "target": "es2015",
+        "declaration": true,
+        "declarationMap": true,
+        "inlineSources": true,
+        "types": [],
+        "lib": ["DOM", "es2019"]
+    },
+    "angularComplierOptions": {},
+    "exclude": ["src/test-setup.ts", "**/*.spec.ts"],
+    "include": ["**/*.ts"]
+}
