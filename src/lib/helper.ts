@@ -1,5 +1,5 @@
 import { DataQueryParams, QueryState } from './models';
-import { DataActionPayload } from './core';
+import { DataActionPayload } from './models';
 
 /**
  * @description Check if QueryParams is exists in history[]

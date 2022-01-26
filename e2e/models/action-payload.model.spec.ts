@@ -5,7 +5,7 @@ import {
     DataQueryParams,
     ReducerFlag,
     ReducerFlagMethod,
-} from '../src/lib';
+} from '../../src/lib';
 
 describe('DataActionPayload', () => {
     jest.autoMockOn();

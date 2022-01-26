@@ -2,6 +2,8 @@
 
 ## SLVI Data Management
 
+---
+
 Many applications have substantial domain models with 10s or 100s of entity types.
 
 Such applications typically create, retrieve, update, and delete entity data that are "persisted" in a database of some sort, hosted on a remote server.
@@ -14,7 +16,33 @@ SLVI/Data is an abstraction over the Store, Effects, and Entity that radically r
 
 This library was made with Love, generated with [Nx](https://nx.dev).
 
+## Table Of Content
+
+---
+
+-   [SLVI-DM](#slvi-dm)
+
+    -   [Table Of Content](#table-of-content)
+    -   [Installation](#installation)
+    -   [Usage](#usage)
+        -   [Entry Level (Component Level)](#entry-level-component-level)
+        -   [Advanced Level (SandBox Level - For More control)](#advanced-level-sandbox-level---for-more-control)
+    -   [Default Actions](#default-actions)
+        -   [(One-Entity / single-Item)](#one-entity--single-item)
+        -   [(List-of-Entities / Many-of-Items)](#list-of-entities--many-of-items)
+    -   [Casting / Mapping / Reformation (Advanced / Optional / Recommended)](#casting--mapping--reformation-advanced--optional--recommended)
+    -   [Extra Actions (Advanced)](#extra-actions-advanced)
+    -   [Subscribe Custom Selector (Advanced)](#subscribe-custom-selector-advanced)
+    -   [Infinity Loading (Infinite Scroll / Fetch all data following pagination)](#infinity-loading-infinite-scroll--fetch-all-data-following-pagination)
+    -   [EndPointVariables](#endpointvariables)
+    -   [Direct API Calling Bypass Ngrx Store](#direct-api-calling-bypass-ngrx-store)
+    -   [AfterActionSuccess for ex. (Redirection)](#afteractionsuccess-for-ex-redirection)
+    -   [Date Transfer Object (DTO) - Response Structure](#date-transfer-object-dto---response-structure)
+    -   [Running unit tests](#running-unit-tests)
+
 ## Installation
+
+---
 
 1.  Create your `DATA_CONFIG` implements `DataConfig` interface in separate file and define your entities ids, endPoints Ids and extra actions as much as you need follow code example.
 
@@ -68,9 +96,13 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     })
     ```
 
-## Setup
+## Usage
 
-### Default setup (Component Level)
+---
+
+### Entry Level (Component Level)
+
+---
 
 1.  Inject `DataSandBoxFactory` in your component `constructor()`.
 2.  Ask your factory to create your sandBox immediately in `constructor` or `ngOnInit` not both then follow
@@ -101,7 +133,9 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     }
     ```
 
-### Advanced setup (SandBox Level - For More control)
+### Advanced Level (SandBox Level - For More control)
+
+---
 
 1.  Create your own `@Injectable() CustomSandBox` extends `DataSandBoxService` to inherit everything.
 2.  You have to pass `YOUR_ENTITY_ID` & `YOUR_END_POINT_ID` in the constructor `super()`.
@@ -129,11 +163,13 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     }
     ```
 
-## Usage
-
 ### Default Actions
 
+---
+
 #### (One-Entity / single-Item)
+
+---
 
 1.  For manipulating operations for (one-entity) use:
 
@@ -183,6 +219,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     ```
 
 #### (List-of-Entities / Many-of-Items)
+
+---
 
 1.  For manipulating operations for (bulk/list-entities) use:
 
@@ -241,6 +279,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
 
 ### Casting / Mapping / Reformation (Advanced / Optional / Recommended)
 
+---
+
 -   For refactoring entity or entities to for ex. cast `DTO` to `EntityModel`.
 
 1. In Your `CustomSandBox` override `mapping()` method.
@@ -261,6 +301,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     ```
 
 ### Extra Actions (Advanced)
+
+---
 
 1.  For Extra Actions you already defined in your `DATA_CONFIG` file.
 
@@ -337,6 +379,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
 
 ### Subscribe Custom Selector (Advanced)
 
+---
+
 1.  You can subscribe any selector by using function `select(...)`
     passing ( `selector key` follows `BaseSelector` ) as `string`.
 
@@ -345,6 +389,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     ```
 
 ### Infinity Loading (Infinite Scroll / Fetch all data following pagination)
+
+---
 
 1.  You make results to be cumulated in same store and cache them in same time
 
@@ -377,11 +423,15 @@ This library was made with Love, generated with [Nx](https://nx.dev).
 
 ### EndPointVariables
 
+---
+
 -   Each Url has some variables for ex. {organizationId} , {assetId} or {entityId}.
 -   There is way to replace their values by passing an object called [`endPointVariables`]
     on the fly through the action dispatching in `dispatchExtraAction(...)`.
 
 ### Direct API Calling Bypass Ngrx Store
+
+---
 
 -   You can call API directly with specific url without implementing any additional services.
 
@@ -448,6 +498,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
 
 ### AfterActionSuccess for ex. (Redirection)
 
+---
+
 1. For Base `ReducerFlag` actions [`addOne` , `updateOne` , `addMany` , `updateMany`]
 
     ```ts
@@ -468,6 +520,8 @@ This library was made with Love, generated with [Nx](https://nx.dev).
     ```
 
 ### Date Transfer Object (DTO) - Response Structure
+
+---
 
 -   SLVI/Data follow [{JSON:API}](https://jsonapi.org/format/)
 
@@ -510,5 +564,7 @@ This library was made with Love, generated with [Nx](https://nx.dev).
 1. Extra actions response can be any structure of what you want, but If you want reducer to know what's happening via ReducerFlag, you must match previous two DTOs.
 
 ## Running unit tests
+
+---
 
 -   Run `nx test data` to execute the unit tests.

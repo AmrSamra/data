@@ -2,9 +2,9 @@ import { waitForAsync } from '@angular/core/testing';
 import { createFeatureSelector } from '@ngrx/store';
 import { Observable, of } from 'rxjs';
 
-import { BaseState, BaseSelector } from '../src/lib';
-import { DataSelectorsGenerator } from '../src/lib/core/selectors.service';
-import { TEST_CONFIG } from './test.config';
+import { BaseState, BaseSelector } from '../../src/lib';
+import { DataSelectorsGenerator } from '../../src/lib/core/selectors.service';
+import { TEST_CONFIG } from '../test.config';
 
 describe('DataSelectorsService', () => {
     jest.autoMockOn();

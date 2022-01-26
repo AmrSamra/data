@@ -28,7 +28,7 @@ import {
 
 import { TEST_CONFIG } from './test.config';
 
-describe('ApiCallService', () => {
+describe('DataSandBoxService', () => {
     jest.autoMockOn();
     const adapter = createEntityAdapter();
     const initialState = getInitialState(adapter);
@@ -481,41 +481,6 @@ describe('ApiCallService', () => {
                 {
                     variable: 'VARIABLE',
                 },
-            );
-        }),
-    );
-
-    it(
-        'EXTRA ACTION',
-        waitForAsync(() => {
-            actions$
-                .pipe(
-                    filter(
-                        (payload: DataActionPayload) =>
-                            dataActionsFilter(payload) && !!payload.method,
-                    ),
-                    first(),
-                )
-                .subscribe((reAction) => {
-                    expect(reAction.id).toEqual('extraActionId');
-                    expect(reAction.reducerFlag).toEqual(ReducerFlag.SET_ONE);
-                    expect(reAction.method).toBe('GET');
-                    expect(reAction.callUrl).toBe('another/url/ID/path');
-                    expect(reAction.requestBag.body).toEqual({
-                        param: 'PARAM',
-                    });
-                });
-            // Dispatch Extra Action
-            sandBox.dispatchExtraAction(
-                'extraActionId',
-                {
-                    itemId: 'ITEM_ID',
-                    body: {
-                        param: 'PARAM',
-                    },
-                },
-                { id: 'ID' },
-                ReducerFlag.SET_ONE,
             );
         }),
     );

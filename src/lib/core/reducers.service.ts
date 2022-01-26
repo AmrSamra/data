@@ -13,11 +13,11 @@ import {
     DataConfig,
     ReducerFlag,
     QueryState,
+    DataActionPayload,
     DataAction,
     on,
     DataParams,
 } from '../models';
-import { DataActionPayload } from './actions.service';
 
 @Injectable()
 export class DataReducersService {

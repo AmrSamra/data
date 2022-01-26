@@ -1,7 +1,6 @@
-import { DataParams, DataQueryParams } from '../src/lib';
+import { DataParams, DataQueryParams } from '../../src/lib';
 
-describe('Query Params', () => {
-    jest.autoMockOn();
+describe('DataQueryParams', () => {
     let queryParams: DataQueryParams;
     let arranged: DataParams<any>;
 

@@ -5,11 +5,11 @@ import {
     AppState,
     DataAction,
     DataConfigEndPoint,
+    DataActionPayload,
 } from '../models';
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { DataActionPayload } from './actions.service';
-import { ConfigByIdentifier, DataConfigService } from '../data.config';
+import { ConfigByIdentifier, DataConfigService } from '../data-config.service';
 import { Actions } from '@ngrx/effects';
 import { dataActionsFilter } from '../helper';
 

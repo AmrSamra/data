@@ -1,17 +1,15 @@
 import { Action } from '@ngrx/store';
+import { generateActionType } from '../helper';
 import {
     BaseActionRequestBag,
     DataAction,
     DataBaseActionURL,
-    DataCallMethod,
-    DataExtraAction,
-    DataParams,
-    DataQueryParams,
-    DataResponse,
     ReducerFlag,
     ReducerFlagMethod,
-} from '../models';
-import { generateActionType } from '../helper';
+} from './action.model';
+import { DataCallMethod, DataExtraAction } from './config.model';
+import { DataParams, DataQueryParams } from './query-params.model';
+import { DataResponse } from './response.model';
 
 export class DataActionPayload implements DataAction, Action {
     url?: DataBaseActionURL;

@@ -6,10 +6,10 @@ import {
     BaseSelector,
     DataQueryParams,
     IReducerFlag,
+    DataActionPayload,
 } from '../models';
 import { filter, map } from 'rxjs/operators';
 import { Observable } from 'rxjs';
-import { DataActionPayload } from './actions.service';
 import { _DataCoreInjection } from './core-injection.service';
 
 export abstract class _DataCoreService extends _DataCoreInjection {

@@ -1,5 +1,5 @@
 import { Injectable, InjectionToken, Injector } from '@angular/core';
-import { DataConfigService } from './data.config';
+import { DataConfigService } from './data-config.service';
 import { DataSandBoxService } from './data.service';
 import { DataCallMethod } from './models';
 

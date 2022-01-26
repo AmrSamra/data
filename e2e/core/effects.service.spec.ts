@@ -10,19 +10,19 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Action, ActionCreator } from '@ngrx/store/src/models';
 import { Observable, of } from 'rxjs';
 
-import { DataEffectsService } from '../src/lib/core/effects.service';
+import { DataEffectsService } from '../../src/lib/core/effects.service';
 import {
     DataActionPayload,
     DataModule,
     ReducerFlag,
     DATA_ACTION,
     DataUtils,
-} from '../src/lib';
+    IResponseDto,
+} from '../../src/lib';
 
-import { ITestDto, TEST_CONFIG } from './test.config';
-import { IResponseDto } from '../src/lib/dto';
+import { ITestDto, TEST_CONFIG } from '../test.config';
 
-describe('Effects Service', () => {
+describe('DataEffectsService', () => {
     jest.autoMockOn();
     let actions$: Observable<Action>;
     let action: ActionCreator<string, any>;

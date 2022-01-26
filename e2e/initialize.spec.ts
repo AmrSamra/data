@@ -5,7 +5,6 @@ import { Action, ActionCreator } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import {
     DataModule,
-    DataConfigService,
     SelectorsGroup,
     ApiCallService,
     DataActionPayload,
@@ -23,7 +22,6 @@ import { TEST_CONFIG } from './test.config';
 describe('Initialize Test', () => {
     const mod = DataModule.forRoot(TEST_CONFIG);
     const actions$ = new Observable<DataActionPayload>();
-    let configService: DataConfigService;
     let selectorService: DataSelectorsGenerator;
     let effectService: DataEffectsService;
 
@@ -58,33 +56,6 @@ describe('Initialize Test', () => {
             }),
         ),
     );
-
-    it(
-        'DataConfigService be Initialized',
-        waitForAsync(
-            inject(
-                [DATA_SELECTORS, DATA_ACTION],
-                (
-                    selectors: SelectorsGroup,
-                    action: ActionCreator<string, any>,
-                ) => {
-                    configService = new DataConfigService(
-                        TEST_CONFIG,
-                        action,
-                        selectors,
-                    );
-                    expect(configService).toBeDefined();
-                },
-            ),
-        ),
-    );
-
-    it('Config Reading in DataConfigService', () => {
-        expect(configService.configurations).toMatchObject(TEST_CONFIG);
-        expect(configService.getConfiguration().validEntity).toMatchObject(
-            TEST_CONFIG.validEntity,
-        );
-    });
 
     it('DataSelectorsGenerator be Initialized', () => {
         selectorService = new DataSelectorsGenerator(TEST_CONFIG);

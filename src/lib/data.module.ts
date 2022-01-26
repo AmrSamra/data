@@ -5,7 +5,7 @@ import {
     NgModule,
 } from '@angular/core';
 import { DataConfig, BaseState, createAction, props } from './models';
-import { DataConfigService } from './data.config';
+import { DataConfigService } from './data-config.service';
 import { ApiCallService } from './core';
 import { DataSelectorsGenerator } from './core/selectors.service';
 import { DataEffectsService } from './core/effects.service';
@@ -14,7 +14,7 @@ import { Actions, USER_PROVIDED_EFFECTS } from '@ngrx/effects';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { DataSandBoxFactory } from './data-factory.service';
 import { DATA_ACTION, DATA_CONFIG, DATA_SELECTORS } from './data.tokens';
-import { DataUtils } from './data-layout-utils.service';
+import { DataUtils } from './data-utils.service';
 
 @NgModule({
     providers: [DataSandBoxFactory, ApiCallService],

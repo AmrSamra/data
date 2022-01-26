@@ -1,7 +1,6 @@
-import { DataResponse } from '../src/lib';
+import { DataResponse } from '../../src/lib';
 
-describe('Query Results', () => {
-    jest.autoMockOn();
+describe('DataResponse', () => {
     let queryResults: DataResponse;
     const items: any[] = [{ id: 'x' }, { id: 'y' }, { id: 'z' }];
 

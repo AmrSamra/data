@@ -12,9 +12,9 @@ import {
     DataQueryParams,
     DataResponse,
     QueryState,
-} from '../src/lib';
-import { DataReducersService } from '../src/lib/core/reducers.service';
-import { TEST_CONFIG } from './test.config';
+} from '../../src/lib';
+import { DataReducersService } from '../../src/lib/core/reducers.service';
+import { TEST_CONFIG } from '../test.config';
 
 describe('DataReducersService<T', () => {
     jest.autoMockOn();

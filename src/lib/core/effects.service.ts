@@ -4,10 +4,14 @@ import { Observable, of } from 'rxjs';
 import { ApiCallService } from './api-call.service';
 import { Actions, createEffect } from '@ngrx/effects';
 import { catchError, filter, map, mergeMap } from 'rxjs/operators';
-import { DataAction, DataConfig, ReducerFlagMethod } from '../models';
+import {
+    DataAction,
+    DataActionPayload,
+    DataConfig,
+    ReducerFlagMethod,
+} from '../models';
 import { DATA_ACTION, DATA_CONFIG } from '../data.tokens';
-import { DataActionPayload } from './actions.service';
-import { DataUtils } from '../data-layout-utils.service';
+import { DataUtils } from '../data-utils.service';
 import { dataActionsFilter } from '../helper';
 
 @Injectable()

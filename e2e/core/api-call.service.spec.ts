@@ -4,15 +4,16 @@ import {
     HttpTestingController,
 } from '@angular/common/http/testing';
 
-import { ITestDto, TEST_CONFIG } from './test.config';
-import { IResponseDto, IResponseItemsDto } from '../src/lib/dto';
+import { ITestDto, TEST_CONFIG } from '../test.config';
 import {
     DataCallMethod,
     DataQueryParams,
     DataResponse,
     DataModule,
     ApiCallService,
-} from '../src/lib';
+    IResponseDto,
+    IResponseItemsDto,
+} from '../../src/lib';
 
 describe('ApiCallService', () => {
     jest.autoMockOn();
